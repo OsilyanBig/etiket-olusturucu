@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiket Oluşturucu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="18" rx="2"/>
+                        <line x1="6" y1="8" x2="18" y2="8"/>
+                        <line x1="6" y1="12" x2="14" y2="12"/>
+                        <line x1="6" y1="16" x2="10" y2="16"/>
+                    </svg>
+                    <h1>Etiket Oluşturucu</h1>
+                </div>
+                <p class="subtitle">Ürün etiketlerinizi oluşturun</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Form Bölümü -->
+            <section class="form-section">
+                <div class="card">
+                    <div class="card-header">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                        <h2>Ürün Bilgileri</h2>
+                    </div>
+
+                    <form id="labelForm">
+                        <!-- Ürün Adı -->
+                        <div class="form-group">
+                            <label for="productName">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                                    <line x1="7" y1="7" x2="7.01" y2="7"/>
+                                </svg>
+                                Ürün Adı
+                            </label>
+                            <input type="text" id="productName" placeholder="Örn: Uniball UM-153 Signo Broad" required>
+                        </div>
+
+                        <!-- Menşei -->
+                        <div class="form-group">
+                            <label for="origin">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="2" y1="12" x2="22" y2="12"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                                Menşei
+                            </label>
+                            <input type="text" id="origin" placeholder="Örn: Japonya" required>
+                        </div>
+
+                        <!-- Fiyat Değiştirme Tarihi -->
+                        <div class="form-group">
+                            <label for="fdt">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                Fiyat Değiştirme Tarihi (F.D.T)
+                            </label>
+                            <input type="date" id="fdt" required>
+                        </div>
+
+                        <!-- Fiyat -->
+                        <div class="form-group">
+                            <label for="price">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"/>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                                Fiyat (TL)
+                            </label>
+                            <input type="text" id="price" placeholder="Örn: 159.90" required>
+                        </div>
+
+                        <!-- KDV -->
+                        <div class="form-group kdv-group">
+                            <label>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                                KDV Durumu
+                            </label>
+                            <div class="kdv-options">
+                                <div class="kdv-option">
+                                    <input type="radio" id="kdvDahil" name="kdv" value="dahil" checked>
+                                    <label for="kdvDahil" class="kdv-label">
+                                        <span class="radio-custom"></span>
+                                        KDV Dahil
+                                    </label>
+                                </div>
+                                <div class="kdv-option">
+                                    <input type="radio" id="kdvHaric" name="kdv" value="haric">
+                                    <label for="kdvHaric" class="kdv-label">
+                                        <span class="radio-custom"></span>
+                                        KDV Hariç
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Barkod -->
+                        <div class="form-group">
+                            <label for="barcode">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 7 3 3 7 3"/>
+                                    <polyline points="17 3 21 3 21 7"/>
+                                    <polyline points="21 17 21 21 17 21"/>
+                                    <polyline points="7 21 3 21 3 17"/>
+                                    <rect x="7" y="7" width="3" height="10"/>
+                                    <rect x="12" y="7" width="1" height="10"/>
+                                    <rect x="15" y="7" width="2" height="10"/>
+                                </svg>
+                                Barkod Numarası
+                            </label>
+                            <input type="text" id="barcode" placeholder="Örn: 4902778653128" required>
+                            <span class="input-hint">EAN-13 formatında 13 haneli barkod numarası girin</span>
+                        </div>
+
+                        <!-- Adet -->
+                        <div class="form-group">
+                            <label for="quantity">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="8" height="8" rx="1"/>
+                                    <rect x="14" y="2" width="8" height="8" rx="1"/>
+                                    <rect x="2" y="14" width="8" height="8" rx="1"/>
+                                    <rect x="14" y="14" width="8" height="8" rx="1"/>
+                                </svg>
+                                Etiket Adedi
+                            </label>
+                            <input type="number" id="quantity" min="1" max="100" value="1" required>
+                            <span class="input-hint">Aynı etiketten kaç adet yazdırmak istiyorsunuz?</span>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="generateBtn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="18" rx="2"/>
+                                    <line x1="6" y1="8" x2="18" y2="8"/>
+                                    <line x1="6" y1="12" x2="14" y2="12"/>
+                                    <line x1="6" y1="16" x2="10" y2="16"/>
+                                </svg>
+                                Etiket Oluştur
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="clearBtn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"/>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                </svg>
+                                Temizle
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Önizleme Bölümü -->
+            <section class="preview-section">
+                <div class="card">
+                    <div class="card-header">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <h2>Etiket Önizleme</h2>
+                    </div>
+
+                    <div class="preview-area" id="previewArea">
+                        <div class="preview-placeholder" id="placeholder">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="2" y="3" width="20" height="18" rx="2"/>
+                                <line x1="6" y1="8" x2="18" y2="8"/>
+                                <line x1="6" y1="12" x2="14" y2="12"/>
+                                <line x1="6" y1="16" x2="10" y2="16"/>
+                            </svg>
+                            <p>Bilgileri girip "Etiket Oluştur" butonuna tıklayın</p>
+                        </div>
+
+                        <!-- Etiket Canvas -->
+                        <div id="labelContainer" class="label-container" style="display:none;">
+                            <canvas id="labelCanvas"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Yazdır Butonu -->
+                    <div class="print-actions" id="printActions" style="display:none;">
+                        <button class="btn btn-success" id="printBtn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 6 2 18 2 18 9"/>
+                                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                                <rect x="6" y="14" width="12" height="8"/>
+                            </svg>
+                            Yazdır
+                        </button>
+                        <button class="btn btn-outline" id="downloadBtn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Görsel İndir
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Etiket Oluşturucu</p>
+        </footer>
+    </div>
+
+    <!-- Yazdırma için gizli alan -->
+    <div id="printArea" class="print-area"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
